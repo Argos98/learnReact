@@ -1,9 +1,9 @@
 import React from 'react'
 
-function createToDoButton() {
+function CreateToDoButton() {
   return (
     <button type="button">agregar ToDo</button>
   );
 }
 
-export { createToDoButton};
+export { CreateToDoButton};
