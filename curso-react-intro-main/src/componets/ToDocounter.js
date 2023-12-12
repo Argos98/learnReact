@@ -1,6 +1,6 @@
 
 import '../css/toDoCounter.css'
-
+import React from 'react';
 
 function ToDocounter({ total, completed }) {
   return (
