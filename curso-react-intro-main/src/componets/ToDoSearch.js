@@ -1,11 +1,11 @@
 import React from "react";
 import "../css/ToDoSearch.css";
 
-function ToDoSearch() {
+function ToDoSearch({ searchValue, setSearchValue }) {
 
-   const [searchValue, setSearchValue] = React.useState('');
+  
 
-   //console.log('1'+searchValue);
+ 
    return <input placeholder="nombre de la tarea a buscar"
       className="TodoSearch"
       value={searchValue}

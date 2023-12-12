@@ -16,20 +16,33 @@ const defaultToDos = [
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(defaultToDos);
+  const [searchValue, setSearchValue] = React.useState('');
+
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
+  const totalTodos = todos.length;
+
   return (
     <React.Fragment>
-      <ToDocounter completed={16} total={50} />
-      <ToDoSearch />
+      <ToDocounter
+        completed={completedTodos}
+        total={totalTodos} 
+      />
+      
+      <ToDoSearch
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />
 
       <ToDoList>
         {defaultToDos.map((todo) => (
-          <ToDoItem 
-          key={todo.text}
-          text={todo.text}
-          completed={todo.completed}
+          <ToDoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
           />
         ))}
-        {}
+        { }
       </ToDoList>
 
       <CreateToDoButton />
