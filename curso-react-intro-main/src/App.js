@@ -37,13 +37,22 @@ function App() {
     setTodos(newTodos);
   };
 
-  const deleteTodo = (text) => {};
+  const deleteTodo = (text) => {
+
+    const newTodos=[...todos];
+    const todoIndex = newTodos.findIndex(todo => todo.text === text);
+    newTodos.splice(todoIndex,1);
+    setTodos(newTodos);
+
+
+  };
 
   return (
     <React.Fragment>
       <ToDocounter
         completed={completedTodos}
         total={totalTodos}
+        allCompleted={completedTodos === totalTodos}
       />
 
       <ToDoSearch
