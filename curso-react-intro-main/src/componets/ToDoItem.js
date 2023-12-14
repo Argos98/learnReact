@@ -1,5 +1,8 @@
-import '../css/ToDoItem.css'
 import React from 'react';
+import '../css/ToDoItem.css'
+import { BsCheck2 } from "react-icons/bs";
+
+import { BsXLg } from "react-icons/bs";
 
 function ToDoItem(props) {
   return (
@@ -8,7 +11,7 @@ function ToDoItem(props) {
         className={`Icon Icon-check ${props.completed && "Icon-check--active"}`}
         onClick={props.onComplete}
       >
-        V
+        <BsCheck2 />
       </span>
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
@@ -17,7 +20,7 @@ function ToDoItem(props) {
         className="Icon Icon-delete"
         onClick={props.onDelete}
       >
-        X
+        <BsXLg />
       </span>
     </li>
   );
