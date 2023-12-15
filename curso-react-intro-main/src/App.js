@@ -9,15 +9,21 @@ import { CreateToDoButton } from "./componets/CreateToDoButton";
 
 import "./App.css";
 
-const defaultToDos = [
-  { text: "test1", completed: true },
-  { text: "test2", completed: false },
-  { text: "test3", completed: true },
-  { text: "test4", completed: false },
-];
+// const defaultToDos = [
+//   { text: "test1", completed: true },
+//   { text: "test2", completed: false },
+//   { text: "test3", completed: true },
+//   { text: "test4", completed: false },
+// ]; 
+
+// localStorage.setItem("todos", defaultToDos);  
+
 
 function App() {
-  const [todos, setTodos] = React.useState(defaultToDos);
+
+  let parsedToDos = localStorage.getItem("todos");
+
+  const [todos, setTodos] = React.useState(parsedToDos);
   const [searchValue, setSearchValue] = React.useState("");
 
   const completedTodos = todos.filter((todo) => !!todo.completed).length;
